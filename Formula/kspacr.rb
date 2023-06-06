@@ -5,12 +5,12 @@
 class Kspacr < Formula
   desc ""
   homepage "https://kspacr.com"
-  version "0.4.2"
+  version "0.4.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.2/kspacr-cli_0.4.2_darwin_x86_64.tar.gz"
-      sha256 "cd825dbe93dc2516ac80e5387ad4f685577acccccd9a89fb7ccf02ce61febdf2"
+      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.3/kspacr-cli_0.4.3_darwin_x86_64.tar.gz"
+      sha256 "6255f5558df9084f8bf51683c86195574ed409f2eb4f7c96e61672a917d1ed43"
 
       def install
         bin.install "kspacr"
@@ -24,8 +24,8 @@ class Kspacr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.2/kspacr-cli_0.4.2_darwin_arm64.tar.gz"
-      sha256 "228478081de36c475d3374b6f3fb4ede88cfe0a6662e13ec5b70018eb396776e"
+      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.3/kspacr-cli_0.4.3_darwin_arm64.tar.gz"
+      sha256 "2be8ca1be55cefd54397055400c22c58dde589a0c0fd1fdcf9866bd88c0437ff"
 
       def install
         bin.install "kspacr"
@@ -41,9 +41,9 @@ class Kspacr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.2/kspacr-cli_0.4.2_linux_x86_64.tar.gz"
-      sha256 "afef58be0046846a7c6164900b11355157ea6dfb4527ab867e5c016b71584c4c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.3/kspacr-cli_0.4.3_linux_arm64.tar.gz"
+      sha256 "152cf13697116cfcc9d6a92f5e4ca95a5022e5a475947a5702165a63d88d81cf"
 
       def install
         bin.install "kspacr"
@@ -56,9 +56,9 @@ class Kspacr < Formula
         (fish_completion/"kspacr.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.2/kspacr-cli_0.4.2_linux_arm64.tar.gz"
-      sha256 "e99242964d7a593aa5ce68c0e84667e136be3afb32147a62d0ebe8ea1ab72948"
+    if Hardware::CPU.intel?
+      url "https://github.com/kspacr/kspacr-cli/releases/download/v0.4.3/kspacr-cli_0.4.3_linux_x86_64.tar.gz"
+      sha256 "27fbdc5e2110c3e605c79313bb5ff8272944160779393cae6e8c639e22d83e6d"
 
       def install
         bin.install "kspacr"
